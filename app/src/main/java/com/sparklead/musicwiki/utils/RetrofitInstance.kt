@@ -40,5 +40,8 @@ class RetrofitInstance {
         val trackDetails : RetrofitInterface by lazy {
             retrofit.create(RetrofitInterface::class.java)
         }
+        val albumDetailsPage : RetrofitInterface by lazy {
+            retrofit.create(RetrofitInterface::class.java)
+        }
     }
 }

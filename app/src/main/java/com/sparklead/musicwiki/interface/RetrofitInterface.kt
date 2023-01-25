@@ -1,6 +1,7 @@
 package com.sparklead.musicwiki.`interface`
 
 import com.sparklead.musicwiki.model.GenreDetails.GenreDetailModel
+import com.sparklead.musicwiki.model.albumDetailModel.AlbumDetailDataClass
 import com.sparklead.musicwiki.model.albumModel.AlbumDataClass
 import com.sparklead.musicwiki.model.artistModel.ArtistDataClass
 import com.sparklead.musicwiki.model.tagDataClass.GenreTag
@@ -45,5 +46,13 @@ interface RetrofitInterface {
         @Query("api_key") apiKey: String = API_KEY,
         @Query("format") format: String = "json"
     ): Response<TrackDataClass>
+
+    @GET("?method=album.getinfo")
+    suspend fun getAlbumDetail(
+        @Query("api_key") apiKey: String = API_KEY,
+        @Query("artist") artist: String,
+        @Query("album") album: String,
+        @Query("format") format: String = "json"
+    ): Response<AlbumDetailDataClass>
 
 }

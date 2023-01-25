@@ -8,12 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.FragmentAlbumBinding
 import com.sparklead.musicwiki.model.albumModel.Album
 import com.sparklead.musicwiki.ui.adapter.AlbumAdapterList
-import com.sparklead.musicwiki.ui.adapter.GenreListAdapter
 import com.sparklead.musicwiki.viewmodels.GenreDetailsViewModel
 
 
