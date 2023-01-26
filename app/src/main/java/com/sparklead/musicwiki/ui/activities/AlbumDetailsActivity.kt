@@ -39,7 +39,6 @@ class AlbumDetailsActivity : AppCompatActivity() {
             Glide.with(this).load(it.album.image[2].text).into(binding.albumDetailImage)
             binding.albumDetailBody.text = it.album.wiki.summary
         }
-//        binding.lifecycleOwner = this
 
 
 
