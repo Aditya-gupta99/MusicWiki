@@ -26,6 +26,8 @@ class GenreActivity : AppCompatActivity() {
 
         binding.lifecycleOwner = this
 
+//        supportActionBar!!.hide()
+
 
         viewModel.getGenreTag()
         viewModel._tagList.observe(this){

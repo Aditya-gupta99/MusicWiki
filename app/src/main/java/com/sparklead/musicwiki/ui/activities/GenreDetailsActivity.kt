@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.ViewModelProvider
+import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.ActivityGenreDetailsBinding
 import com.sparklead.musicwiki.ui.adapter.GenreViewPager
 import com.sparklead.musicwiki.viewmodels.GenreDetailsViewModel
+import kotlinx.android.synthetic.main.activity_genre_details.*
 
 
 class GenreDetailsActivity : AppCompatActivity() {
@@ -22,6 +24,9 @@ class GenreDetailsActivity : AppCompatActivity() {
 
         binding.lifecycleOwner = this
 
+
+        setupActionBar()
+
         val tag = intent.getStringExtra("GenreTagName").toString()
 
         binding.tvGenreTitle.text = tag
@@ -32,6 +37,19 @@ class GenreDetailsActivity : AppCompatActivity() {
         }
 
         setViewpager()
+    }
+
+    private fun setupActionBar() {
+        setSupportActionBar(binding.toolbarGenreDetails)
+
+        val actionBar = supportActionBar
+        if (actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_new_24)
+        }
+
+        binding.toolbarGenreDetails.setNavigationOnClickListener{ onBackPressed() }
     }
 
     private fun setViewpager() {

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.ItemTagBinding
 import com.sparklead.musicwiki.model.tagDataClass.Tag
 import com.sparklead.musicwiki.ui.activities.GenreDetailsActivity

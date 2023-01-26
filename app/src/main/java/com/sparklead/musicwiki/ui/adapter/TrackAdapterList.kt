@@ -14,7 +14,7 @@ class TrackAdapterList(private val context: Context, private val itemList: List<
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Track) {
             binding.item = item
-            Glide.with(context).load(itemList[position].image[0].text).into(binding.ivTrack)
+            Glide.with(context).load(itemList[position].image[0].text).into(binding.ivAlbum)
         }
 
     }

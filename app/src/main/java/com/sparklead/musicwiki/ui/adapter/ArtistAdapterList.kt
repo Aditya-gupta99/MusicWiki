@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sparklead.musicwiki.databinding.ItemListAlbumBinding
 import com.sparklead.musicwiki.databinding.ItemListArtistBinding
 import com.sparklead.musicwiki.model.albumModel.Album
@@ -15,6 +16,7 @@ class ArtistAdapterList(private val context : Context, private val itemList : Li
     inner class ArtistViewHolder(private val binding : ItemListArtistBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item : Artist){
             binding.item = item
+            Glide.with(context).load(itemList[position].image[0].text).into(binding.ivAlbum)
             binding.cvArtist.setOnClickListener {
                 val intent = Intent(context,ArtistDetailsActivity::class.java)
                 intent.putExtra("artistName",item.name)

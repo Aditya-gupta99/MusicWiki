@@ -7,22 +7,45 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="12dp"
         android:fillViewport="true"
         android:orientation="vertical"
+        android:background="@color/app_dark"
         android:scrollbars="none"
         tools:context=".ui.activities.GenreDetailsActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_genre_details"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/tv_user_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:padding="7sp"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+        </androidx.appcompat.widget.Toolbar>
 
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0sp"
             android:fillViewport="true"
             android:orientation="vertical"
             android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_genre_details"
             tools:context=".view.DetailActivity">
 
             <LinearLayout
@@ -33,8 +56,8 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:backgroundTint="@color/black"
+                    android:layout_margin="16sp"
+                    android:backgroundTint="#4d5368"
                     app:cardCornerRadius="10dp">
 
                     <LinearLayout
@@ -69,7 +92,11 @@
                     android:id="@+id/tab_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp">
+                    android:layout_marginVertical="8dp"
+                    android:backgroundTint="@color/app_dark"
+                    app:tabSelectedTextColor="@color/app_light"
+                    app:tabIndicatorColor="@color/app_light"
+                    app:tabTextColor="@color/white">
 
                 </com.google.android.material.tabs.TabLayout>
 
@@ -80,5 +107,5 @@
                     android:layout_marginBottom="5dp" />
             </LinearLayout>
         </ScrollView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
+import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.ActivityAlbumDetailsBinding
 import com.sparklead.musicwiki.model.albumDetailModel.Tag
 import com.sparklead.musicwiki.ui.adapter.AlbumAdapterList
@@ -22,9 +23,11 @@ class AlbumDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityAlbumDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupActionBar()
         val album = intent.getStringExtra("albumName").toString()
         val artist = intent.getStringExtra("artistName").toString()
 
@@ -40,8 +43,19 @@ class AlbumDetailsActivity : AppCompatActivity() {
             binding.albumDetailBody.text = it.album.wiki.summary
         }
 
+    }
 
+    private fun setupActionBar() {
+        setSupportActionBar(binding.toolbarAlbumDetails)
 
+        val actionBar = supportActionBar
+        if (actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_new_24)
+        }
+
+        binding.toolbarAlbumDetails.setNavigationOnClickListener{ onBackPressed() }
     }
 
     private fun setRecycleView() {

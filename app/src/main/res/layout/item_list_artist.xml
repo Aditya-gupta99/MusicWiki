@@ -13,7 +13,9 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
+        android:layout_margin="6sp"
+        app:cardElevation="2sp"
+        android:backgroundTint="@color/app_dark"
         android:id="@+id/cv_artist">
 
         <LinearLayout
@@ -21,13 +23,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_album"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_vertical"
                 android:scaleType="centerCrop"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_marginLeft="10sp"
+                app:shapeAppearanceOverlay="@style/roundedImageView"  />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,6 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
                     android:padding="4dp"
+                    android:textColor="@color/white"
                     android:text="@={item.name}"
                     android:textStyle="bold" />
 
