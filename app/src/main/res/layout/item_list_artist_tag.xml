@@ -13,10 +13,11 @@
         android:id="@+id/tv_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
+        android:layout_margin="6sp"
+        android:backgroundTint="@color/app_light"
         android:layout_marginVertical="10dp"
-        android:elevation="6dp"
-        app:cardCornerRadius="50dp">
+        app:cardElevation="6sp"
+        app:cardCornerRadius="16sp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +29,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="8dp"
+                android:padding="12sp"
+                android:fontFamily="@font/poppins_light"
+
+                android:textColor="@color/white"
                 android:text="@={item.name}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp" />

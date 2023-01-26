@@ -31,6 +31,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:padding="7sp"
+                android:fontFamily="@font/poppins_light"
+
                 android:textColor="@color/white"
                 android:textSize="22sp" />
         </androidx.appcompat.widget.Toolbar>
@@ -72,6 +74,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="8dp"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_light"
+
                             android:textAppearance="@style/TextAppearance.AppCompat.Title"
                             android:textColor="@color/white"
                             android:textSize="20sp" />
@@ -80,6 +84,8 @@
                             android:id="@+id/tv_genre_details"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+
                             android:layout_marginVertical="8dp"
                             android:gravity="center"
                             android:textColor="@color/white"
@@ -94,6 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     android:backgroundTint="@color/app_dark"
+                    android:fontFamily="@font/poppins_light"
                     app:tabSelectedTextColor="@color/app_light"
                     app:tabIndicatorColor="@color/app_light"
                     app:tabTextColor="@color/white">

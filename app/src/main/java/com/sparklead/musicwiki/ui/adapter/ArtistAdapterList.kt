@@ -1,11 +1,13 @@
 package com.sparklead.musicwiki.ui.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.ItemListAlbumBinding
 import com.sparklead.musicwiki.databinding.ItemListArtistBinding
 import com.sparklead.musicwiki.model.albumModel.Album
@@ -21,6 +23,10 @@ class ArtistAdapterList(private val context : Context, private val itemList : Li
                 val intent = Intent(context,ArtistDetailsActivity::class.java)
                 intent.putExtra("artistName",item.name)
                 context.startActivity(intent)
+                (context as Activity).overridePendingTransition(
+                    R.anim.slide_in_right,
+                    R.anim.slide_out_left
+                )
             }
         }
     }

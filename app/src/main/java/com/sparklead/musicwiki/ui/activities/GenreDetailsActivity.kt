@@ -11,7 +11,7 @@ import com.sparklead.musicwiki.viewmodels.GenreDetailsViewModel
 import kotlinx.android.synthetic.main.activity_genre_details.*
 
 
-class GenreDetailsActivity : AppCompatActivity() {
+class GenreDetailsActivity : BaseActivity() {
 
     private lateinit var binding : ActivityGenreDetailsBinding
     private val viewModel: GenreDetailsViewModel by lazy { ViewModelProvider(this)[GenreDetailsViewModel::class.java] }
@@ -24,6 +24,7 @@ class GenreDetailsActivity : AppCompatActivity() {
 
         binding.lifecycleOwner = this
 
+        showLoadingDialog()
 
         setupActionBar()
 
@@ -34,6 +35,7 @@ class GenreDetailsActivity : AppCompatActivity() {
         viewModel.getDetails(tag)
         viewModel.result.observe(this) {
             binding.tvGenreDetails.text = it.tag.wiki.summary
+            hideLoading()
         }
 
         setViewpager()

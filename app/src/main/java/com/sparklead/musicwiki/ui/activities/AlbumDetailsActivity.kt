@@ -13,7 +13,7 @@ import com.sparklead.musicwiki.ui.adapter.AlbumAdapterList
 import com.sparklead.musicwiki.ui.adapter.TagAdapterList
 import com.sparklead.musicwiki.viewmodels.AlbumDetailsViewModel
 
-class AlbumDetailsActivity : AppCompatActivity() {
+class AlbumDetailsActivity : BaseActivity() {
 
     private lateinit var binding : ActivityAlbumDetailsBinding
     private val viewModel : AlbumDetailsViewModel by lazy { ViewModelProvider(this)[AlbumDetailsViewModel::class.java]}
@@ -26,6 +26,8 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
         binding = ActivityAlbumDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        showLoadingDialog()
 
         setupActionBar()
         val album = intent.getStringExtra("albumName").toString()
@@ -41,6 +43,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
             binding.albumArtistName.text = it.album.artist
             Glide.with(this).load(it.album.image[2].text).into(binding.albumDetailImage)
             binding.albumDetailBody.text = it.album.wiki.summary
+            hideLoading()
         }
 
     }

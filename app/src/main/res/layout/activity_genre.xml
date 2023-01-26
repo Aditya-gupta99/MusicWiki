@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30sp"
+            android:fontFamily="@font/poppins_bold"
             android:text="MusicWiki"
-            android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,9 +32,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50sp"
             android:text="Welcome !"
+            android:fontFamily="@font/poppins_medium"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -44,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30sp"
+            android:fontFamily="@font/poppins_light"
             android:text="Choose a genre to start with"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -52,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_expend"
             android:layout_width="30sp"
             android:layout_height="30sp"
             android:layout_marginStart="5sp"
@@ -66,7 +68,7 @@
             android:id="@+id/genreListRecycleView"
             android:layout_width="match_parent"
             android:layout_height="0sp"
-            android:layout_marginTop="20sp"
+            android:layout_marginTop="40sp"
             android:layout_marginLeft="16sp"
             android:layout_marginRight="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

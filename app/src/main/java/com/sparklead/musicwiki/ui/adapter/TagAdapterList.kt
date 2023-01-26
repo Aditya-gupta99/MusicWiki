@@ -1,10 +1,12 @@
 package com.sparklead.musicwiki.ui.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.ItemListTagBinding
 import com.sparklead.musicwiki.model.albumDetailModel.Tag
 import com.sparklead.musicwiki.ui.activities.GenreDetailsActivity
@@ -19,6 +21,10 @@ class TagAdapterList(private val context: Context, private val itemList: List<Ta
                 val intent = Intent(context,GenreDetailsActivity::class.java)
                 intent.putExtra("GenreTagName",item.name)
                 context.startActivity(intent)
+                (context as Activity).overridePendingTransition(
+                    R.anim.slide_in_right,
+                    R.anim.slide_out_left
+                )
             }
         }
     }

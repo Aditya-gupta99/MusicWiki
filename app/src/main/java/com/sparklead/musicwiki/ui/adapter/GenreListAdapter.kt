@@ -1,5 +1,6 @@
 package com.sparklead.musicwiki.ui.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.ItemTagBinding
 import com.sparklead.musicwiki.model.tagDataClass.Tag
 import com.sparklead.musicwiki.ui.activities.GenreDetailsActivity
+import java.security.AccessController.getContext
+
 
 class GenreListAdapter(private val context : Context, private val itemList: List<Tag>) :
     RecyclerView.Adapter<GenreListAdapter.GenreViewHolder>() {
@@ -21,6 +24,10 @@ class GenreListAdapter(private val context : Context, private val itemList: List
                 val intent  = Intent(context,GenreDetailsActivity::class.java)
                 intent.putExtra("GenreTagName",item.name)
                 context.startActivity(intent)
+                (context as Activity).overridePendingTransition(
+                    R.anim.slide_in_right,
+                    R.anim.slide_out_left
+                )
             }
         }
     }

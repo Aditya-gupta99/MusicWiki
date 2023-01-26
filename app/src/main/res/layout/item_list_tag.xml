@@ -30,6 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="12sp"
+                android:fontFamily="@font/poppins_light"
+
                 android:textColor="@color/white"
                 android:text="@={item.name}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"

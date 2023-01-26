@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sparklead.musicwiki.databinding.ItemArtistTrackBinding
 import com.sparklead.musicwiki.model.artistTopTrackModel.Track
 
@@ -13,6 +14,8 @@ class ArtistTrackAdapter(private val context: Context, private val itemList: Lis
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Track) {
             binding.item = item
+            Glide.with(context).load(itemList[position].image[0].text).into(binding.ivTrack)
+
         }
 
     }

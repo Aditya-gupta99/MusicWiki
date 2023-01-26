@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16sp"
-                    android:backgroundTint="#4d5368"
+                    app:cardBackgroundColor="#4d5368"
                     app:cardCornerRadius="10dp">
 
                     <LinearLayout
@@ -94,6 +94,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="8dp"
+                            android:fontFamily="@font/poppins_light"
                             android:gravity="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
                             android:textColor="@color/white" />
@@ -102,6 +103,8 @@
                             android:id="@+id/album_artist_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:textSize="12sp" />
@@ -111,6 +114,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="8dp"
+                            android:fontFamily="@font/poppins_light"
+
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:textSize="16sp" />

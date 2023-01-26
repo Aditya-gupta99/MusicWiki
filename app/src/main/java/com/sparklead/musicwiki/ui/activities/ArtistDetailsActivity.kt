@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
+import com.sparklead.musicwiki.R
 import com.sparklead.musicwiki.databinding.ActivityArtistDetailsBinding
 import com.sparklead.musicwiki.model.artistInfoModel.Tag
 import com.sparklead.musicwiki.model.artistTopAlbumModel.Album
@@ -15,7 +16,7 @@ import com.sparklead.musicwiki.ui.adapter.ArtistTrackAdapter
 import com.sparklead.musicwiki.ui.adapter.TagArtistListAdapter
 import com.sparklead.musicwiki.viewmodels.ArtistDetailsViewModel
 
-class ArtistDetailsActivity : AppCompatActivity() {
+class ArtistDetailsActivity : BaseActivity() {
 
     private lateinit var binding : ActivityArtistDetailsBinding
     private val viewModel : ArtistDetailsViewModel by lazy { ViewModelProvider(this)[ArtistDetailsViewModel::class.java]}
@@ -34,6 +35,10 @@ class ArtistDetailsActivity : AppCompatActivity() {
         binding = ActivityArtistDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupActionBar()
+
+        showLoadingDialog()
+
         tagList = ArrayList()
 
         val artist = intent.getStringExtra("artistName").toString()
@@ -49,6 +54,7 @@ class ArtistDetailsActivity : AppCompatActivity() {
             binding.followers.text = viewModel.countViews(it.artist.stats.listeners.toLong())
             Glide.with(this).load(it.artist.image[2].text).into(binding.artistImage)
             setDetailsRecycleView()
+            hideLoading()
         }
 
         viewModel.getArtistTopTrack(artist)
@@ -92,7 +98,18 @@ class ArtistDetailsActivity : AppCompatActivity() {
             layoutManager = staggeredGridLayoutManager
             adapter =tagAdapter
         }
+    }
 
+    private fun setupActionBar() {
+        setSupportActionBar(binding.toolbarArtistDetails)
 
+        val actionBar = supportActionBar
+        if (actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_new_24)
+        }
+
+        binding.toolbarArtistDetails.setNavigationOnClickListener{ onBackPressed() }
     }
 }
